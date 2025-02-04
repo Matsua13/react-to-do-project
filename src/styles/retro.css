@@ -1,0 +1,223 @@
+/* ------------------------------- */
+/* Retro Fighting Game Style CSS */
+/* ------------------------------- */
+
+/* Global styles */
+body {
+  background-color: #000;           /* Fond noir pour l'ambiance arcade */
+  font-family: 'Press Start 2P', cursive;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  display: block;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+/* Container principal */
+.container {
+  width: 90%;
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #1a1a1a;
+  border: 3px solid #ff3333;         /* Bordure rouge néon */
+  border-radius: 10px;
+  box-shadow: 0 0 20px #ff3333;       /* Effet glow rouge */
+}
+
+/* Titre principal */
+h1 {
+  font-size: 2em;
+  color: #ff3333;                   /* Rouge vif pour le titre */
+  text-shadow: 2px 2px 4px #000;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Style pour les items de la to-do list */
+.todo-item {
+  display: flex;
+  justify-content: space-between;  /* Sépare le texte et les boutons */
+  align-items: center;
+  background: #333;                /* Fond gris foncé */
+  margin: 10px 0;
+  padding: 10px;
+  border: 2px solid #00ff00;        /* Bordure verte néon */
+  border-radius: 5px;
+  text-shadow: 1px 1px 2px #000;
+  font-size: 1em;
+}
+
+/* Style pour les tâches complétées */
+.todo-item.completed {
+  background: #222;
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+/* Style pour le texte cliquable de la tâche */
+.todo-text {
+  cursor: pointer;
+  flex: 1;             /* Occupe l'espace restant */
+  margin-right: 10px;  /* Espace entre le texte et les boutons */
+}
+
+/* Groupe de boutons alignés côte à côte */
+.btn-group {
+  display: flex;
+  align-items: center;
+  gap: 5px;  /* Espacement entre les boutons */
+}
+
+/* Boutons (pour ajouter, supprimer, update, etc.) */
+.btn {
+  font-family: 'Press Start 2P', cursive;
+  padding: 5px 10px;         /* Réduction du padding */
+  margin-left: 5px;          /* Petite marge entre les boutons */
+  border: 2px solid #ff3333;
+  color: #ff3333;
+  background: #000;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background 0.3s, color 0.3s;
+  font-size: 0.8em;          /* Réduction de la taille du texte */
+}
+
+.btn:hover {
+  background: #ff3333;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Groupe de boutons pour les aligner côte à côte */
+.btn-group {
+  display: flex;
+  align-items: center;
+  gap: 5px;  /* Espacement entre les boutons */
+}
+
+/* Exemple de bouton secondaire (si besoin) */
+.btn-secondary {
+  border-color: #00ff00;
+  color: #00ff00;
+}
+
+.btn-secondary:hover {
+  background: #00ff00;
+  color: #000;
+}
+
+/* Style de la table (si ta to-do list est sous forme de tableau) */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  padding: 5px 10px;
+  border: 2px solid #00ff00;
+  text-align: center;
+  font-size: 0.8em;
+}
+
+th {
+  background-color: #ff3333;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+/* Pour un effet "hover" sur les lignes du tableau */
+tr:hover {
+  background-color: #f1c40f;
+  color: #000;
+}
+
+/* ----------------------------- */
+/* Formulaire Retro Styling      */
+/* ----------------------------- */
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.form-container input[type="text"],
+.form-container input[type="datetime-local"] {
+  font-family: 'Press Start 2P', cursive;
+  padding: 10px;
+  margin: 5px;
+  border: 2px solid #ffb433;       /* Bordure rouge néon */
+  background-color: #000;          /* Fond noir */
+  color: #fff;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.form-container input::placeholder {
+  color: #aaa;                    /* Texte de l'espace réservé en gris clair */
+}
+
+.form-container button {
+  font-family: 'Press Start 2P', cursive;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border: 2px solid #ffb433;
+  background-color: #000;
+  color: #ffb433;
+  text-transform: uppercase;
+  transition: background-color 0.3s, color 0.3s;
+  cursor: pointer;
+}
+
+.form-container button:hover {
+  background-color: #ff3333;
+  color: #fff;
+}
+
+/* Pour personnaliser le calendrier de react-datepicker */
+.date-picker {
+  font-family: 'Press Start 2P', cursive;
+  padding: 10px;
+  margin: 5px;
+  border: 2px solid #ff3333;
+  background-color: #000;
+  color: #fff;
+  border-radius: 5px;
+  text-align: center;
+}
+
+/* Ajustements pour les petits écrans */
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+    padding: 15px;
+  }
+  h1 {
+    font-size: 1.5em;
+  }
+  .btn {
+    padding: 8px 12px;
+    font-size: 0.7em;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 100%;
+    padding: 10px;
+  }
+  h1 {
+    font-size: 1.3em;
+  }
+  .btn {
+    padding: 6px 10px;
+    font-size: 0.6em;
+  }
+}
