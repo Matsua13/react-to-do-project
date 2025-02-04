@@ -3,6 +3,9 @@ import express, { Request, Response } from 'express';
 import { PrismaClient } from '@prisma/client';
 import { taskSchema } from './validation';
 import { ZodError } from 'zod';
+import helmet from 'helmet';
+import { sanitizeInput } from './middleware/sanitize'; // Import du middleware de sanitisation
+// import { validate } from './middleware/validate'; // Si vous utilisez un middleware de validation (exemple avec Zod)
 
 const app = express();
 const prisma = new PrismaClient();
@@ -10,9 +13,10 @@ const PORT = process.env.PORT || 3000;
 
 // Utiliser le middleware JSON intégré à Express
 app.use(express.json());
+app.use(helmet());
 
 // Créer une tâche avec validation via Zod
-app.post('/tasks', async (req: Request, res: Response): Promise<void> => {
+app.post('/tasks', sanitizeInput, async (req, res) => {
   try {
     // Validation et parsing du body de la requête à l'aide du schéma Zod
     const parsedData = taskSchema.parse(req.body);
