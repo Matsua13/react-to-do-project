@@ -91,7 +91,7 @@ export const TodoProvider: React.FC<{ children: React.ReactNode }> = ({ children
         if (!todo.completed && !todo.notified) {
           const daysLeft = daysUntilDeadline(todo.deadline);
           if (daysLeft <= 3 && daysLeft > 0) {
-            toast.warn(`The task "${todo.text}" have a close deadline!`, { autoClose: false });
+            toast.warn(`The task "${todo.text}" has a close deadline!`, { autoClose: false });
             setTodos(prevTodos =>
               prevTodos.map(t =>
                 t.id === todo.id ? { ...t, notified: true } : t
